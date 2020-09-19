@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
+import {Link} from "react-router-dom"
 
 const StyledContainer = styled.div`
   display: grid;
@@ -40,10 +41,10 @@ const Sidebar = () => {
           src="https://yt3.ggpht.com/-gjxoCu8Fu3c/AAAAAAAAAAI/AAAAAAAAAAA/Uji17DdykF4/s900-c-k-no/photo.jpg"
           width="100px"
         ></img>
-        <div className="title">NewsScrapper</div>
+        <div className="title">NewsScraper</div>
       </div>
       <ul className="menulist">
-        <li>home</li>
+        <li><Link to="/home">home</Link></li>
         <li
           className="news"
           onClick={() => {
@@ -58,14 +59,13 @@ const Sidebar = () => {
           news
         </li>
         <div collapsed={newsClicked} hidden={newsClicked}><ul>
-          <li>스포츠</li>
+          <li><Link to="/news">스포츠</Link></li>
           <li>경제</li>
           <li>정치</li>
           <li>사회</li>
           <li>연예</li>
-
           </ul></div>
-        <li>scrabbed</li>
+        <li><Link to="/scrab">scrabbed</Link></li>
         <li>login</li>
       </ul>
     </StyledContainer>
